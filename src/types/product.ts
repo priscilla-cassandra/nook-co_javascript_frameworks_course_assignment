@@ -16,3 +16,11 @@ export interface Product {
   tags?: string[];
   reviews?: Review[];
 }
+
+export interface ApiResponseSingleProduct {
+  data: Product;
+}
+
+export interface ApiResponseProducts {
+  data: Product[];
+}
