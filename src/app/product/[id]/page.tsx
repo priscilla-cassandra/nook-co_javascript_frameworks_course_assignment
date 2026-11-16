@@ -1,6 +1,12 @@
-export default async function ProductPage({
-  params,
-}: PageProps<'/product/[id]'>) {
+import getProductById from '@/api/getProductById';
+
+interface ProductPageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params;
-  return <main>Product {id}</main>;
+  const product = await getProductById(id);
+
+  return <h1>{product.title}</h1>;
 }
