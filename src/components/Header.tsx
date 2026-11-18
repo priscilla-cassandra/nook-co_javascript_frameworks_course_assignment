@@ -19,7 +19,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header>
+    <header className="border-b border-gray-200 bg-white shadow-md">
       <nav className="mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-xl font-bold">
           Nook&Co {/* Replace with logo */}
