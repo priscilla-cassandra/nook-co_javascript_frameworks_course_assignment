@@ -1,14 +1,24 @@
 'use client';
 
 import useCartStore from '@/stores/cartStore';
+import { useRouter } from 'next/navigation';
 
 export default function CartPage() {
   const items = useCartStore((state) => state.items);
   const removeItem = useCartStore((state) => state.removeItem);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
+  const totalPrice = items.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
+  const router = useRouter();
 
   if (items.length === 0) {
-    return <p>Handlekurven er tom</p>;
+    return (
+      <p className="mt-8 text-center text-2xl font-semibold">
+        Handlekurven er tom
+      </p>
+    );
   }
 
   return (
@@ -57,6 +67,17 @@ export default function CartPage() {
           </li>
         ))}
       </ul>
+      <div className="mt-6 flex items-center justify-between">
+        <p className="text-lg">
+          Total: <strong>{totalPrice.toFixed(2)}</strong>
+        </p>
+      </div>
+      <button
+        className="rounded-lg bg-black px-6 py-3 font-semibold text-white hover:bg-gray-800"
+        onClick={() => router.push('/checkout/success')}
+      >
+        Checkout
+      </button>
     </div>
   );
 }
