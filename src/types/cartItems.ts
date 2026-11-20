@@ -2,6 +2,7 @@ export interface CartProduct {
   productId: string;
   title: string;
   price: number;
+  image: { url: string; alt: string };
 }
 
 export interface CartItem {
@@ -9,6 +10,7 @@ export interface CartItem {
   title: string;
   price: number;
   quantity: number;
+  image: { url: string; alt: string };
 }
 
 export interface CartState {
