@@ -12,13 +12,14 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
 
   function handleClick() {
     const price =
-      product.discountedPrice > product.price
+      product.discountedPrice < product.price
         ? product.discountedPrice
         : product.price;
     addItem({
       productId: product.id,
       title: product.title,
       price: price,
+      image: product.image,
     });
   }
 
