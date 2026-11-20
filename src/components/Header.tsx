@@ -9,6 +9,7 @@ import {
   faCartShopping,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
+import useCartStore from '@/stores/cartStore';
 
 const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
@@ -17,6 +18,8 @@ const navLinks: NavLink[] = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const items = useCartStore((state) => state.items);
+  const totalItems = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <header className="border-b border-gray-200 bg-white shadow-md">
@@ -46,8 +49,17 @@ export default function Header() {
           >
             <FontAwesomeIcon icon={open ? faXmark : faBars} />
           </button>
-          <Link href="/cart" aria-label="Cart">
+          <Link
+            href="/cart"
+            aria-label="Cart"
+            className="relative inline-block"
+          >
             <FontAwesomeIcon icon={faCartShopping} />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-black px-1 text-xs font-semibold text-white">
+                {totalItems}
+              </span>
+            )}
           </Link>
         </div>
       </nav>
