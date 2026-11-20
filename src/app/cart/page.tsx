@@ -16,7 +16,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <p className="mt-8 text-center text-2xl font-semibold">
-        Handlekurven er tom
+        Your shopping cart is empty
       </p>
     );
   }
