@@ -9,15 +9,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = await params;
   const product = await getProductById(id);
   const onSale = product.discountedPrice < product.price;
+  const discountPercent = Math.round(
+    ((product.price - product.discountedPrice) / product.price) * 100,
+  );
 
   return (
     <div className="mx-auto mt-10 flex max-w-5xl flex-col gap-8 p-4 md:flex-row">
-      <div className="md:w-1/2">
+      <div className="relative md:w-1/2">
         <img
           src={product.image.url}
           alt={product.image.alt}
           className="w-full rounded-lg object-cover"
-        ></img>
+        />
+        {onSale && (
+          <span className="absolute top-3 left-3 rounded bg-red-600 px-3 py-1 text-sm font-bold text-white">
+            -{discountPercent}%
+          </span>
+        )}
       </div>
       <div className="flex flex-col gap-4 md:w-1/2">
         <h2 className="text-3xl font-bold">{product.title}</h2>
@@ -39,7 +47,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <AddToCartButton product={product} />
         <div>
           {product.tags && product.tags.length > 0 && (
-            <ul className="flew-wrap flex gap-2">
+            <ul className="flex flex-wrap gap-2">
               {product.tags.map((tag) => (
                 <li
                   key={tag}
