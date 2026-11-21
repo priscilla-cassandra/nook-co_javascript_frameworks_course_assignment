@@ -25,7 +25,7 @@ export default function Header() {
     <header className="border-b border-gray-200 bg-white shadow-md">
       <nav className="mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-xl font-bold">
-          Nook&Co {/* Replace with logo */}
+          Nook&Co
         </Link>
 
         {/* Desktop Navigation */}
