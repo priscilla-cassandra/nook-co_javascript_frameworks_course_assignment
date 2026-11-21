@@ -63,6 +63,21 @@ export default function Header() {
           </Link>
         </div>
       </nav>
+      {open && (
+        <ul className="flex flex-col gap-4 border-t border-gray-200 px-6 py-4 md:hidden">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="block"
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </header>
   );
 }
