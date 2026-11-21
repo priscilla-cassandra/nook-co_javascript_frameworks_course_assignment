@@ -17,20 +17,20 @@ The project can be viewed and run by cloning the repo to VSCode
 2. Open folder in VSCode
 3. Open a terminal (Ctrl+)
 4. Run `npm install` to install dependencies from package.json
-5. Run ```bash
-   npm run dev
+5. Run 
+   `npm run dev`
 
-# or
+or
 
-yarn dev
+`yarn dev`
 
-# or
+or
 
-pnpm dev
+`pnpm dev`
 
-# or
+or
 
-bun dev
+`bun dev`
 
 to start the dev server
 
