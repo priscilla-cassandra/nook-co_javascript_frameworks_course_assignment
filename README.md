@@ -1,36 +1,64 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+Nook&Co is an online shop with a little bit of everything. This is a course assignment developed through the Noroff Frontend-development programme, which aim to showcase skills in React and Next.js
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
+- Next.js
+- TypeScript
+- React
+- Tailwind CSS
+
+## Running the project
+
+The project can be viewed and run by cloning the repo to VSCode
+
+1. Clone the repo (Ctrl+Shift+P -> `Git:Clone` -> paste URL `https://github.com/priscilla-cassandra/nook-co_javascript_frameworks_course_assignment.git`)
+2. Open folder in VSCode
+3. Open a terminal (Ctrl+)
+4. Run `npm install` to install dependencies from package.json
+5. Run ```bash
+   npm run dev
+
 # or
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# or
+
+pnpm dev
+
+# or
+
+bun dev
+
+```to start the  dev server
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+Here are some of the features the author would like to highlight:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Searching for products on the homepage with dynamic filtering as the user types
+2. Visitors can add items to cart, increase and reduce number of each item, and remove items
+3. A contact form with form validation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Link to live website
 
-## Deploy on Vercel
+https://nook-cojavascriptframeworkscourseas.vercel.app/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Name:** Priscilla C. Neeraas <br>
+**GitHub**: priscilla-cassandra
+
+## Contact
+
+priscilla-92@live.com <br>
+[LinkedIn](https://www.linkedin.com/in/priscilla-neeraas-379410145/)
